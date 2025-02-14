@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        .weather { margin-top: 20px; font-size: 24px; }
+    </style>
+</head>
+<body>
+    <h2>Weather App</h2>
+    <input type="text" id="city" placeholder="Enter city name">
+    <button onclick="getWeather()">Get Weather</button>
+    <div class="weather" id="weatherResult"></div>
+
+    <script>
+        async function getWeather() {
+            let city = document.getElementById("city").value;
+            let response = await fetch(`https://wttr.in/${city}?format=%C+%t`);
+            let weather = await response.text();
+            document.getElementById("weatherResult").innerText = weather;
+        }
+    </script>
+</body>
+</html>

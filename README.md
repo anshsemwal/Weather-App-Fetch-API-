@@ -1,1 +1,2 @@
-# Weather-App-Fetch-API-
+# Weather-App-Fetch-API
+A weather app using OpenWeatherMap API.
